@@ -4,9 +4,14 @@
 </head>
 <body>
     <h1>Welcome to SpamCatch</h1>
-    <form>
-        <label><input type="text" name="title">Article title: </label>
-        <input type="submit" value="submit"/>
+    <form action="/submit" method="POST">
+        <label for="title">Article title:</label> 
+        <input type="text" id="title" name="title"><br />
+        <button type="submit">Submit</button>
     </form>
+
+    {% if prediction %}
+        <p>This title is {{prediction}}</p>
+    {% endif %}
 </body>
 </html>

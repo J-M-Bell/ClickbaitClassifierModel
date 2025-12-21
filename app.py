@@ -6,17 +6,17 @@ app = Flask(__name__)
 
 model = joblib.load('finalized_model.pkl') # Update path as needed
 
-@app.route('/', methods=['GET'])
-def startPage():
-    return render_template('index.html')
+@app.route('/')
+def index():
+    return render_template("index.html")
 
-@app.route('/', methods=['POST'])
+@app.route('/submit', methods=['POST'])
 def predict():
-    title = request.files['title']
-    model = ClickbaitClassifierModel()
-    prediction = ClickbaitClassifierModel.predict(title)
-    
-
+    if request.method == "POST":
+        title = request.form.get("title")
+        model = ClickbaitClassifierModel()
+        prediction = model.predict(title)
+        return render_template("index.html", prediction=prediction)
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)

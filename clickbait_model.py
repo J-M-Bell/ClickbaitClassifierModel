@@ -77,9 +77,6 @@ class ClickbaitClassifierModel():
     #     model = joblib.load('my_model.pkl')
 
 
-
-
-
-
-
-# joblib.dump(model, 'my_model.pkl')
+model = ClickbaitClassifierModel()
+prediction = model.predict("Which TV Female Friend Group Do You Belong In")
+print(prediction)
