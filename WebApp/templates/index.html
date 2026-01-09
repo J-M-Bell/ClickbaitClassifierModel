@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <head>
-    <title>Clickbait Classifier</title>
+    <title>Spam Classifier</title>
 </head>
 <body>
-    <h1>Welcome to Clickbait Finder!</h1>
+    <h1>Welcome to SpamCatch</h1>
     <form action="/submit" method="POST">
         <label for="title">Article title:</label> 
-        <input type="text" id="title" name="title"><br />
+        <input type="text" id="textfield" name="title"><br />
         <button type="submit">Submit</button>
     </form>
 
     {% if prediction %}
-        <p>This title is {{prediction}}</p>
+        <p name="result" id="prediction">This title is {{prediction}}</p>
     {% endif %}
 </body>
 </html>

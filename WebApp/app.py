@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
 import joblib
-from clickbait_model import ClickbaitClassifierModel
+from Data.clickbait_classifier_model import ClickbaitClassifierModel
 
 app = Flask(__name__)
 
-model = joblib.load("./Web App/finalized_model.pkl") # Update path as needed
+model = joblib.load("./WebApp/Data/finalized_model.pkl") # Update path as needed
 
 @app.route('/')
 def index():

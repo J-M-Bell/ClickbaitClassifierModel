@@ -10,7 +10,7 @@ import pickle
 
 class ClickbaitClassifierModel():
     """
-    A class to instantiate the Clickbait Classifier ML Model
+    A class to instantiate the Clickbait Classifier ML Model.
     """
     def __init__(self):
         """
@@ -33,7 +33,7 @@ class ClickbaitClassifierModel():
     def _getData(self):
         """
         A method that gets the clickbait and non-clickbait titles
-        to be processed
+        to be processed.
         
         :param self: ClickbaitClassifierModel - The ClickbaitClassifierModel object
         """
@@ -41,7 +41,7 @@ class ClickbaitClassifierModel():
         # Formatting text files and mapping them to a dictionary
         titles = []
         targets = []
-        file_path_dict = {'clickbait': './clickbait_data.txt', 'non clickbait': './non_clickbait_data.txt'}
+        file_path_dict = {'clickbait': './WebApp/Data/clickbait_data.txt', 'non clickbait': './WebApp/Data/non_clickbait_data.txt'}
         for key, value in file_path_dict.items():
             with open(value, 'r') as file:
                 for line_number, line in enumerate(file):
@@ -63,7 +63,7 @@ class ClickbaitClassifierModel():
 
     def _custom_tokenizer(self, text):
         """
-        A method to process text into vectors
+        A method to process text into vectors.
         
         :param self: ClickbaitClassifierModel - The ClickbaitClassifierModel object
         :param text: String - clickbait message string
@@ -89,7 +89,7 @@ class ClickbaitClassifierModel():
     def _createPickleFile(self):
         """
         A method to create the deploy the ml model
-        as a pickle file
+        as a pickle file.
         
         :param self: ClickbaitClassifierModel - The ClickbaitClassifierModel object
         """
@@ -99,7 +99,7 @@ class ClickbaitClassifierModel():
 
     def predict(self, text):
         """
-        A method that calls the ml model's predict method 
+        A method that calls the ml model's predict method.
         
         :param self: ClickbaitClassifierModel - The ClickbaitClassifierModel object
         :param text: String - clickbait message string from user
@@ -117,7 +117,7 @@ class ClickbaitClassifierModel():
     
     def _loadModel(self):
         """
-        A helper function to load the model as a pickle file
+        A helper function to load the model as a pickle file.
         
         :param self: ClickbaitClassifierModel - The ClickbaitClassifierModel object
         """
@@ -125,6 +125,6 @@ class ClickbaitClassifierModel():
 
 
 # Tests the model class
-# model = ClickbaitClassifierModel()
-# prediction = model.predict("Which TV Female Friend Group Do You Belong In")
-# print(prediction)
+model = ClickbaitClassifierModel()
+vector = model._custom_tokenizer("Are You More Walter White Or Heisenberg")
+print(vector)
