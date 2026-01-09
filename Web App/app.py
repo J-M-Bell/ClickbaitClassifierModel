@@ -4,7 +4,7 @@ from clickbait_model import ClickbaitClassifierModel
 
 app = Flask(__name__)
 
-model = joblib.load('finalized_model.pkl') # Update path as needed
+model = joblib.load("./Web App/finalized_model.pkl") # Update path as needed
 
 @app.route('/')
 def index():
