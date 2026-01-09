@@ -8,10 +8,18 @@ model = joblib.load('finalized_model.pkl') # Update path as needed
 
 @app.route('/')
 def index():
+    """
+    A function that renders the pages 
+    """
     return render_template("index.html")
 
 @app.route('/submit', methods=['POST'])
 def predict():
+    """
+    A function that finds the prediction from
+    the model and renders the page to display that
+    prediction
+    """
     if request.method == "POST":
         title = request.form.get("title")
         model = ClickbaitClassifierModel()
