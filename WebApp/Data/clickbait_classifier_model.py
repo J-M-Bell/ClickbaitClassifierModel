@@ -36,6 +36,8 @@ class ClickbaitClassifierModel():
         to be processed.
         
         :param self: ClickbaitClassifierModel - The ClickbaitClassifierModel object
+
+        :return the target and features of the data
         """
         
         # Formatting text files and mapping them to a dictionary
